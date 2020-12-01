@@ -1,3 +1,5 @@
+#CODER @Sigaris
+#Database
 import os , json
 
 if not os.path.exists('db.json'):
