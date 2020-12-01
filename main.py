@@ -28,11 +28,17 @@ api_hash = DATA["info-self"]["api_hash"][0]
 list_color = ["grey","red","green","yellow","blue","magenta","cyan"]
 cli = Client("bot", api_id, api_hash)
 
+@cli.on_message(filters.command("ping", "") & filters.me)
+async def ping(client, msg: Message):
+    await msg.edit("IM Online")
 
 @cli.on_message(filters.command("help", "") & filters.me)
 async def help(client, msg: Message):
     text_help = """
 راهنمای ربات :
+
+اطلاع از انلاین بودن ربات
+`ping`
 
 اضافه کردن یوزر برای ذخیره کردن متن
 `useradd` id
